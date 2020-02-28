@@ -1,0 +1,719 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fa",
+				"favorites"
+			],
+			[
+				"rcc",
+				"rcc\tReact: Stateless Functional Component"
+			],
+			[
+				"s",
+				"space-between\tjustify-content"
+			],
+			[
+				"res",
+				"response"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":q",
+				"PHPCompanion:Expand Fully Qualified Class Name"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"setMD",
+				"Set Syntax: Markdown"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"Scope Hunter: Show Scope Under Cursor",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"snippet:",
+				"Snippet: Vue starter template"
+			],
+			[
+				"set Syntax: bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"setSyntax: pos",
+				"Set Syntax: PostCSS"
+			],
+			[
+				"sni",
+				"Set Syntax: Diff"
+			],
+			[
+				"snippet",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 184.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Anis/Code/forum",
+		"/C/Users/Anis/Code/forum/vendor"
+	],
+	"file_history":
+	[
+		"/C/Users/Anis/Code/forum/resources/views/threads/create.blade.php",
+		"/C/Users/Anis/Code/forum/resources/views/threads/reply.blade.php",
+		"/C/Users/Anis/Code/forum/app/Reply.php",
+		"/C/Users/Anis/Code/forum/composer.json",
+		"/C/Users/Anis/Code/forum/database/migrations/2020_02_28_140047_create_favorites_table.php",
+		"/C/Users/Anis/Code/forum/tests/Feature/FavoritesTest.php",
+		"/C/Users/Anis/Code/forum/app/Favorite.php",
+		"/C/Users/Anis/Code/forum/routes/web.php",
+		"/C/Users/Anis/Code/forum/app/Http/Controllers/FavoritesController.php",
+		"/C/Users/Anis/Code/forum/resources/views/layouts/app.blade.php",
+		"/C/Users/Anis/Code/forum/tests/TestCase.php",
+		"/C/Users/Anis/Code/forum/resources/views/threads/index.blade.php",
+		"/C/Users/Anis/Code/forum/tests/Feature/ReadThreadsTest.php",
+		"/C/Users/Anis/Code/forum/phpunit.xml",
+		"/C/Users/Anis/Code/forum/.env",
+		"/C/Users/Anis/Code/forum/app/Filters/Filters.php",
+		"/C/Users/Anis/Desktop/ayu/ayu-mirage.sublime-color-scheme",
+		"/C/Users/Anis/Desktop/ayu/ayu-mirage.sublime-theme",
+		"/C/laragon/www/tailwind-ui-design/app/Http/Controllers/Controller.php",
+		"/H/Preferences.sublime-settings",
+		"/C/laragon/www/tailwind-ui-design/webpack.mix.js",
+		"/C/Users/Anis/Desktop/anis.tmTheme",
+		"/C/laragon/www/tailwindcss/resources/js/components/ExampleComponent.vue",
+		"/C/Users/Anis/Sublime Text Build 3211 x64/Data/Packages/User/anis.tmTheme.chback",
+		"/C/Users/Anis/Desktop/Dayle Rees Color Schemes/sublime/anis.tmTheme",
+		"/C/Users/Anis/Desktop/Dayle Rees Color Schemes/sublime/github.tmTheme",
+		"/C/Users/Anis/Desktop/Anis.tmTheme.xml",
+		"/C/Users/Anis/Desktop/iconfinder_x_2561505.svg",
+		"/C/laragon/www/tailwindcss/routes/web.php",
+		"/C/laragon/www/tailwindcss/resources/js/components/Dashboard.vue",
+		"/C/laragon/www/tailwindcss/resources/views/dashbaord.blade.php",
+		"/C/laragon/www/tailwindcss/webpack.mix.js",
+		"/C/laragon/www/tailwindcss/resources/js/app.js",
+		"/C/laragon/www/tailwindcss/resources/views/home.blade.php",
+		"/C/laragon/www/tailwindcss/ExampleComponent.vue",
+		"/C/laragon/www/tailwindcss/resources/js/bootstrap.js",
+		"/C/laragon/www/laravelvuejs/app/Http/Controllers/UserController.php",
+		"/C/laragon/www/laravelvuejs/routes/web.php",
+		"/C/laragon/www/laravelvuejs/routes/api.php",
+		"/C/laragon/www/laravelvuejs/resources/views/home.blade.php",
+		"/C/laragon/www/laravelvuejs/public/js/app.js",
+		"/C/Users/Anis/Desktop/laravelvuejs-6/codecanyon-20516111-laravel-vuejs-starter-kit-with-bootstrap4-admin-template/composer.json",
+		"/C/Users/Anis/Desktop/laravelvuejs-6/codecanyon-20516111-laravel-vuejs-starter-kit-with-bootstrap4-admin-template/package.json",
+		"/C/laragon/www/apex/core/resources/views/app.blade.php",
+		"/C/laragon/www/apex/core/routes/api.php",
+		"/C/laragon/www/apex/core/routes/web.php",
+		"/C/laragon/www/apex/core/.env",
+		"/C/laragon/www/Files/index.php",
+		"/C/Users/Anis/Downloads/Compressed/apex/codecanyon-20752147-apex-sales-purchase-and-invoicing-solution/apex/package.json",
+		"/C/laragon/www/Files/core/routes/web.php",
+		"/C/laragon/www/Files/core/app/Http/Controllers/BankAccountController.php",
+		"/C/laragon/www/tailwindcss/resources/views/layouts/app.blade.php",
+		"/C/laragon/www/tailwindcss/resources/sass/app.scss",
+		"/C/laragon/www/tailwindcss/package.json",
+		"/C/laragon/www/tailwindcss/.env",
+		"/C/Users/Anis/Desktop/iconfinder_menu-alt_134216.svg",
+		"/C/laragon/www/tailwindcss/tailwind.config.js",
+		"/C/laragon/www/laravel-tailwind-ui/resources/views/layouts/app.blade.php",
+		"/C/laragon/www/laravel-tailwind-ui/resources/views/home.blade.php",
+		"/C/laragon/www/laravel-tailwind-ui/routes/web.php",
+		"/C/laragon/www/laravel-tailwind-ui/resources/js/components/ExampleComponent.vue",
+		"/C/laragon/www/laravel-tailwind-ui/webpack.mix.js",
+		"/C/laragon/www/laravel-tailwind-ui/resources/js/app.js",
+		"/C/laragon/www/laravel-tailwind-ui/resources/js/components/Home.vue",
+		"/C/laragon/www/laravel-tailwind-ui/resources/views/dashboard.blade.php",
+		"/C/laragon/www/laravel-tailwind-ui/resources/sass/app.scss",
+		"/C/laragon/www/laravel-tailwind-ui/.gitattributes",
+		"/C/laragon/www/laravel-tailwind-ui/.env",
+		"/C/laragon/www/laravel-tailwind-ui/tailwind.config.js",
+		"/C/laragon/www/laravel-tailwind-ui/package.json",
+		"/C/laragon/www/blog/tailwind.config.js",
+		"/C/laragon/www/blog/database/migrations/2020_01_29_033913_create_menus_table.php",
+		"/C/laragon/www/blog/database/seeds/DatabaseSeeder.php",
+		"/C/laragon/www/blog/resources/views/layouts/app.blade.php",
+		"/C/laragon/www/blog/routes/web.php",
+		"/C/laragon/www/blog/webpack.mix.js",
+		"/C/Users/Anis/Desktop/gatepass/style.css",
+		"/C/Users/Anis/Desktop/gatepass/index.html",
+		"/C/Users/Anis/Desktop/Stat-final/EncryptedPackage",
+		"/C/Users/Anis/Code/Reactjs/firstapp/src/App.js",
+		"/C/Users/Anis/OneDrive/SKCL/licence-key-ets",
+		"/C/Users/Anis/Code/Reactjs/firstapp/src/Person.js",
+		"/C/Users/Anis/Code/Reactjs/firstapp/cdn/index.js",
+		"/C/Users/Anis/Desktop/App.js",
+		"/C/Users/Anis/Sublime Text Build 3211 x64/Data/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/Anis/Sublime Text Build 3211 x64/Data/Packages/User/Terminal.sublime-settings",
+		"/C/Users/Anis/Code/Apps/helloworld/App.js",
+		"/C/Users/Anis/Code/Apps/helloworld/.exprc",
+		"/C/Users/Anis/Desktop/report/product-services.html",
+		"/C/Users/Anis/Desktop/report/requesition.html",
+		"/C/Users/Anis/Desktop/report/style.css",
+		"/C/Users/Anis/Code/tailwindcss/tailwind.config.js",
+		"/C/Users/Anis/Code/tailwindcss/public/index.html",
+		"/C/Users/Anis/Sublime Text Build 3211 x64/Data/Packages/User/css_style_completions.sublime-settings",
+		"/C/Users/Anis/Sublime Text Build 3211 x64/Data/Packages/CSS Extended Completions/css_style_completions.sublime-settings",
+		"/C/Users/Anis/Code/tailwindcss/css/tailwind.css",
+		"/C/Users/Anis/Code/tailwindcss/package.json",
+		"/C/Users/Anis/Desktop/account_box-24px.svg",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Transaction/TransactionCategoryController.php",
+		"/C/laragon/www/api-laravel/routes/api.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Transaction/TransactionSellerController.php",
+		"/C/laragon/www/api-laravel/app/Transaction.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Transaction/TransactionController.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Product/ProductController.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Category/CategoryController.php",
+		"/C/laragon/www/api-laravel/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php",
+		"/C/laragon/www/api-laravel/vendor/laravel/framework/src/Illuminate/Http/Request.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/User/UserController.php",
+		"/C/laragon/www/api-laravel/app/User.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Buyer/BuyerController.php",
+		"/C/laragon/www/api-laravel/app/Seller.php",
+		"/C/laragon/www/api-laravel/app/Category.php",
+		"/C/laragon/www/api-laravel/database/seeds/DatabaseSeeder.php",
+		"/C/laragon/www/nuxtjs-typeahead/pages/layout/index.vue",
+		"/C/laragon/www/api-laravel/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/laragon/www/api-laravel/database/migrations/2019_08_19_000000_create_failed_jobs_table.php",
+		"/C/laragon/www/api-laravel/database/migrations/2020_01_02_030316_create_user_infos_table.php",
+		"/C/laragon/www/api-laravel/database/migrations/2020_01_13_112702_create_categories_table.php",
+		"/C/laragon/www/api-laravel/database/migrations/2020_01_13_113138_create_products_table.php",
+		"/C/laragon/www/api-laravel/database/migrations/2020_01_13_113200_create_transactions_table.php",
+		"/C/laragon/www/api-laravel/app/Http/Controllers/Seller/SellerController.php",
+		"/C/laragon/www/api-laravel/app/Buyer.php",
+		"/C/laragon/www/api-laravel/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
+		"/C/laragon/www/api-laravel/app/Scopes/SellerScope.php",
+		"/C/laragon/www/api-laravel/app/Exceptions/Handler.php",
+		"/C/laragon/www/api-laravel/app/Scopes/BuyerScope.php",
+		"/C/laragon/www/api-laravel/.env",
+		"/C/laragon/www/api-laravel/vendor/laravel/passport/src/Http/Controllers/AuthorizationController.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"['user_id' => auth()->id()]",
+			"attribute-name",
+			" entity",
+			" entity.other.attribute",
+			" entity.other.attribute-name",
+			"meta.tag.block.any.html",
+			"function",
+			"<string>function</string>",
+			"<string>text</string>",
+			"<string>string</string>",
+			"string",
+			"keyword",
+			"attribute",
+			"tag",
+			"script",
+			"tag",
+			"tagsOptions",
+			"#555555",
+			"#3b3a32",
+			"000000",
+			"#000000",
+			"js",
+			"javascript",
+			"js",
+			"bold",
+			"blue",
+			"ml",
+			"dashboard"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\Anis\\Code\\forum"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 59.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"create.bal",
+				"resources\\views\\threads\\create.blade.php"
+			],
+			[
+				"compo",
+				"composer.json"
+			],
+			[
+				"reply.ba",
+				"resources\\views\\threads\\reply.blade.php"
+			],
+			[
+				"",
+				"untitled"
+			],
+			[
+				"app.bal",
+				"resources\\views\\layouts\\app.blade.php"
+			],
+			[
+				"f",
+				"app\\Favorite.php"
+			],
+			[
+				"REply",
+				"app\\Reply.php"
+			],
+			[
+				"create_fa",
+				"database\\migrations\\2020_02_28_140047_create_favorites_table.php"
+			],
+			[
+				"FaCon",
+				"app\\Http\\Controllers\\FavoritesController.php"
+			],
+			[
+				"r/w",
+				"routes\\web.php"
+			],
+			[
+				"FavTEs",
+				"tests\\Feature\\FavoritesTest.php"
+			],
+			[
+				"ReadThreads",
+				"tests\\Feature\\ReadThreadsTest.php"
+			],
+			[
+				"layout.",
+				"resources\\views\\layouts\\app.blade.php"
+			],
+			[
+				"thread/in",
+				"resources\\views\\threads\\index.blade.php"
+			],
+			[
+				".e",
+				".env"
+			],
+			[
+				"php",
+				"phpunit.xml"
+			],
+			[
+				".env",
+				".env"
+			],
+			[
+				"controller",
+				"app\\Http\\Controllers\\Controller.php"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"dashb",
+				"resources\\views\\dashbaord.blade.php"
+			],
+			[
+				"Dash",
+				"resources\\js\\components\\Dashboard.vue"
+			],
+			[
+				"Person",
+				"src\\Person.js"
+			],
+			[
+				"pers",
+				"src\\Person.js"
+			],
+			[
+				"ap",
+				"App.js"
+			],
+			[
+				"tai",
+				"tailwind.config.js"
+			],
+			[
+				"tra",
+				"app\\Transaction.php"
+			],
+			[
+				"Category",
+				"app\\Http\\Controllers\\Transaction\\TransactionCategoryController.php"
+			],
+			[
+				"r/api",
+				"routes\\api.php"
+			],
+			[
+				"ProductCon",
+				"app\\Http\\Controllers\\Product\\ProductController.php"
+			],
+			[
+				"ProductController",
+				"app\\Http\\Controllers\\Product\\ProductController.php"
+			],
+			[
+				"Illuminate\\Http\\Request",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Http\\Request.php"
+			],
+			[
+				"UserCon",
+				"app\\Http\\Controllers\\User\\UserController.php"
+			],
+			[
+				"User",
+				"app\\User.php"
+			],
+			[
+				"Buyer",
+				"app\\Http\\Controllers\\Buyer\\BuyerController.php"
+			],
+			[
+				"Seller",
+				"app\\Seller.php"
+			],
+			[
+				"Catego",
+				"app\\Category.php"
+			],
+			[
+				"Buyer.php",
+				"app\\Buyer.php"
+			],
+			[
+				"s",
+				"app\\Seller.php"
+			],
+			[
+				"seller",
+				"app\\Http\\Controllers\\Seller\\SellerController.php"
+			],
+			[
+				"BuyerCon",
+				"app\\Http\\Controllers\\Buyer\\BuyerController.php"
+			],
+			[
+				"Buer",
+				"app\\Buyer.php"
+			],
+			[
+				"UserController",
+				"app\\Http\\Controllers\\User\\UserController.php"
+			],
+			[
+				"authrization",
+				"vendor\\laravel\\passport\\src\\Http\\Controllers\\AuthorizationController.php"
+			],
+			[
+				"api",
+				"routes\\api.php"
+			],
+			[
+				"produ",
+				"app\\Http\\Controllers\\Product\\ProductController.php"
+			],
+			[
+				"apiControl",
+				"app\\Http\\Controllers\\ApiController.php"
+			],
+			[
+				"userCon",
+				"app\\Http\\Controllers\\User\\UserController.php"
+			],
+			[
+				"apiCon",
+				"app\\Http\\Controllers\\ApiController.php"
+			],
+			[
+				"productCon",
+				"app\\Http\\Controllers\\Product\\ProductController.php"
+			],
+			[
+				"buy",
+				"app\\Http\\Controllers\\Buyer\\BuyerController.php"
+			],
+			[
+				"sell",
+				"app\\Http\\Controllers\\Seller\\SellerController.php"
+			],
+			[
+				"SellerCon",
+				"app\\Http\\Controllers\\Seller\\SellerController.php"
+			],
+			[
+				"buyerCon",
+				"app\\Http\\Controllers\\Buyer\\BuyerController.php"
+			],
+			[
+				"config/app",
+				"config\\app.php"
+			],
+			[
+				"user_ta",
+				"database\\migrations\\2014_10_12_000000_create_users_table.php"
+			],
+			[
+				"CategoryPro",
+				"app\\CategoryProduct.php"
+			],
+			[
+				"datab",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"databaseseeder",
+				"database\\seeds\\DatabaseSeeder.php"
+			],
+			[
+				"User.php",
+				"app\\User.php"
+			],
+			[
+				"category_pro",
+				"database\\migrations\\2020_01_13_145950_category_product_table.php"
+			],
+			[
+				"product.php",
+				"app\\Product.php"
+			],
+			[
+				"create_tran",
+				"database\\migrations\\2020_01_13_113200_create_transactions_table.php"
+			],
+			[
+				"products",
+				"database\\migrations\\2020_01_13_113138_create_products_table.php"
+			],
+			[
+				"categories",
+				"database\\migrations\\2020_01_13_112702_create_categories_table.php"
+			],
+			[
+				"create_user",
+				"database\\migrations\\2014_10_12_000000_create_users_table.php"
+			],
+			[
+				"Seller.php",
+				"app\\Seller.php"
+			],
+			[
+				"category",
+				"app\\Category.php"
+			],
+			[
+				"Buye",
+				"app\\Buyer.php"
+			],
+			[
+				"Tran",
+				"app\\Transaction.php"
+			],
+			[
+				"Pro",
+				"app\\Product.php"
+			],
+			[
+				"user.",
+				"app\\User.php"
+			],
+			[
+				"userinfo",
+				"api-laravel\\database\\migrations\\2020_01_02_030316_create_user_infos_table.php"
+			],
+			[
+				"store/ind",
+				"store\\index.js"
+			],
+			[
+				"page/posts/in",
+				"pages\\posts\\index.vue"
+			],
+			[
+				"pages",
+				"pages\\index.vue"
+			],
+			[
+				"store",
+				"store\\README.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 345.0,
+		"last_filter": "inter",
+		"selected_items":
+		[
+			[
+				"inter",
+				"intersect"
+			],
+			[
+				"softdeletes",
+				"softDeletes"
+			],
+			[
+				"unaut",
+				"unauthenticated"
+			],
+			[
+				"convertValida",
+				"convertValidationExceptionToResponse"
+			]
+		],
+		"width": 760.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 342.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
