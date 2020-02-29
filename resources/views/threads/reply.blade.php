@@ -2,13 +2,13 @@
 	<div class="panel-heading">
 	    <div class="level">
 	    	<h5 class="flex">
-	    		<a href="#">{{ $reply->owner->name }}</a> said {{ $reply->created_at->diffForHumans() }}
+	    		<a href="{{ route('profile', $reply->owner ) }}">{{ $reply->owner->name }}</a> said {{ $reply->created_at->diffForHumans() }}
 	    	</h5>
 	    	<div>
 	    		<form method="POST" action="/replies/{{ $reply->id }}/favorites">
 	    	{{ csrf_field() }}
 	    			<button type="submit" class="btn btn-primary" {{ $reply->isFavorited() ? 'disabled' : '' }}>
-	    				{{ $reply->favorites()->count() }} {{ 'Favorite', $reply->favorites()->count() }}</button>
+	    				{{ $reply->favorites_count }} {{ 'Favorite', $reply->favorites_count }}</button>
 	    		</form>
 	    	</div>
 	    </div>
