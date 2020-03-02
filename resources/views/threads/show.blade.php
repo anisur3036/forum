@@ -5,7 +5,14 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $thread->title }} <span class="pull-right">{{ $thread->creator->name }}</span></div>
+                <div class="level">
+                <div class="panel-heading flex">{{ $thread->title }} <span class="pull-right">{{ $thread->creator->name }}</span></div>
+                    <form action="{{ $thread->path() }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit" class="btn btn-link">Delete thread</button>
+                    </form>
+                </div>
 
                 <div class="panel-body">
                 	<p>{{ $thread->body }}</p>
