@@ -6,12 +6,14 @@
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="level">
-                <div class="panel-heading flex">{{ $thread->title }} <span class="pull-right">{{ $thread->creator->name }}</span></div>
-                    <form action="{{ $thread->path() }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <button type="submit" class="btn btn-link">Delete thread</button>
-                    </form>
+                <div class="panel-heading flex">{{ $thread->title }} <span><a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a></span></div>
+                    @can ('update', $thread)
+                        <form action="{{ $thread->path() }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn btn-link">Delete thread</button>
+                        </form>
+                    @endcan
                 </div>
 
                 <div class="panel-body">
