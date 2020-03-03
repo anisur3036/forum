@@ -36,6 +36,10 @@
 		"selected_items":
 		[
 			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
 				":q",
 				"PHPCompanion:Expand Fully Qualified Class Name"
 			],
@@ -46,10 +50,6 @@
 			[
 				"setMD",
 				"Set Syntax: Markdown"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
 			],
 			[
 				"setting",
@@ -98,13 +98,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/Users/Anis/Code/forum",
-		"/C/Users/Anis/Code/forum/vendor"
-	],
 	"file_history":
 	[
+		"/C/Users/Anis/Code/forum/resources/views/profiles/show.blade.php",
+		"/C/Users/Anis/Code/forum/app/Providers/AuthServiceProvider.php",
+		"/C/Users/Anis/Code/forum/app/Providers/AppServiceProvider.php",
 		"/C/Users/Anis/Code/forum/resources/views/threads/create.blade.php",
 		"/C/Users/Anis/Code/forum/resources/views/threads/reply.blade.php",
 		"/C/Users/Anis/Code/forum/app/Reply.php",
@@ -229,10 +227,7 @@
 		"/C/laragon/www/api-laravel/app/Buyer.php",
 		"/C/laragon/www/api-laravel/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
 		"/C/laragon/www/api-laravel/app/Scopes/SellerScope.php",
-		"/C/laragon/www/api-laravel/app/Exceptions/Handler.php",
-		"/C/laragon/www/api-laravel/app/Scopes/BuyerScope.php",
-		"/C/laragon/www/api-laravel/.env",
-		"/C/laragon/www/api-laravel/vendor/laravel/passport/src/Http/Controllers/AuthorizationController.php"
+		"/C/laragon/www/api-laravel/app/Exceptions/Handler.php"
 	],
 	"find":
 	{
@@ -292,12 +287,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"folders":
-	[
-		{
-			"path": "C:\\Users\\Anis\\Code\\forum"
-		}
-	],
 	"groups":
 	[
 		{
@@ -362,6 +351,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"appser",
+				"app\\Providers\\AppServiceProvider.php"
+			],
+			[
+				"authser",
+				"app\\Providers\\AuthServiceProvider.php"
+			],
+			[
+				"appserv",
+				"app\\Providers\\AppServiceProvider.php"
+			],
 			[
 				"create.bal",
 				"resources\\views\\threads\\create.blade.php"
@@ -709,10 +710,10 @@
 	},
 	"show_minimap": false,
 	"show_open_files": false,
-	"show_tabs": false,
+	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 342.0,
-	"status_bar_visible": false,
+	"status_bar_visible": true,
 	"template_settings":
 	{
 	}
