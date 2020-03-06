@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class UserProfileTest extends TestCase
 {
+    use DatabaseMigrations;
     /** @test */
     public function a_user_has_profile_page()
     {
@@ -20,9 +21,9 @@ class UserProfileTest extends TestCase
     /** @test */
     public function display_all_thread_when_go_to_his_profile_page()
     {
-    	$user = create('App\User');
-    	$thread = create('App\Thread', ['user_id' => $user->id]);
-    	$this->get('/profiles/' . $user->name)
+        $this->signIn();
+    	$thread = create('App\Thread', ['user_id' => auth()->id()]);
+    	$this->get('/profiles/' . auth()->user()->name)
     		->assertSee($thread->title)
     		->assertSee($thread->body);
     }

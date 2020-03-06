@@ -2,54 +2,103 @@
 
 namespace App;
 
-use App\User;
-use App\Reply;
-use App\Channel;
+use App\Filters\ThreadFilters;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
-	use recordActivity;
+    use RecordsActivity;
 
-	protected $guarded = [];
-	protected $with = ['creator', 'channel'];
-	
-	protected static function boot()
-	{
-		parent::boot();
-		
-		static::addGlobalScope('replyCount', function ($builder) {
-			$builder->withCount('replies');
-		});
-	}
+    /**
+     * Don't auto-apply mass assignment protection.
+     *
+     * @var array
+     */
+    protected $guarded = [];
 
-	public function path()
-	{
-		return '/threads/'. $this->channel->slug . '/' . $this->id;
-	}
+    /**
+     * The relationships to always eager-load.
+     *
+     * @var array
+     */
+    protected $with = ['creator', 'channel'];
 
-	public function replies()
-	{
-		return $this->hasMany(Reply::class);
-	}
-	public function creator()
-	{
-		return $this->belongsTo(User::class, 'user_id');
-	}
-
-	public function channel()
-	{
-		return $this->belongsTo(Channel::class);
-	}
-
-	public function addReply($reply)
-	{
-		$this->replies()->create($reply);
-	}
-
-    public function scopeFilter($query, $filters)
+    /**
+     * Boot the model.
+     */
+    protected static function boot()
     {
-       return $filters->apply($query);
-	}
+        parent::boot();
 
+        static::addGlobalScope('replyCount', function ($builder) {
+            $builder->withCount('replies');
+        });
+
+        static::deleting(function ($thread) {
+            $thread->replies->each->delete();
+        });
+    }
+
+    /**
+     * Get a string path for the thread.
+     *
+     * @return string
+     */
+    public function path()
+    {
+        return "/threads/{$this->channel->slug}/{$this->id}";
+    }
+
+    /**
+     * A thread belongs to a creator.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * A thread is assigned a channel.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function channel()
+    {
+        return $this->belongsTo(Channel::class);
+    }
+
+    /**
+     * A thread may have many replies.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    /**
+     * Add a reply to the thread.
+     *
+     * @param $reply
+     */
+    public function addReply($reply)
+    {
+        $this->replies()->create($reply);
+    }
+
+    /**
+     * Apply all relevant thread filters.
+     *
+     * @param  Builder       $query
+     * @param  ThreadFilters $filters
+     * @return Builder
+     */
+    public function scopeFilter($query, ThreadFilters $filters)
+    {
+        return $filters->apply($query);
+    }
 }

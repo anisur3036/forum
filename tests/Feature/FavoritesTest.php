@@ -2,43 +2,47 @@
 
 namespace Tests\Feature;
 
-use App\Favorite;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class FavoritesTest extends TestCase
 {
-	/** @test */
-	public function a_guest_cant_favorite()
-	{
-		$this->withExceptionHandling();
-		$this->post('/replies/1/favorites')
-			->assertRedirect('/login');
-	}
-	
+    use DatabaseMigrations;
+
     /** @test */
-    public function an_authenticated_user_can_favorite_any_reply()
+    function guests_can_not_favorite_anything()
     {
-    	$user = $this->signIn();
-    	$reply = create('App\Reply');
-    	$this->post('/replies/' . $reply->id . '/favorites');
-    	$this->assertCount(1, $reply->favorites);
+        $this->withExceptionHandling()
+            ->post('replies/1/favorites')
+            ->assertRedirect('/login');
     }
 
     /** @test */
-    public function an_authenticated_user_can_favorite_any_reply_only_one_time()
+    public function an_authenticated_user_can_favorite_any_reply()
     {
-    	$user = $this->signIn();
-    	$reply = create('App\Reply');
-    	try {
-	    	$this->post('/replies/' . $reply->id . '/favorites');
-	    	$this->post('/replies/' . $reply->id . '/favorites');
-    	} catch (\Exception $e) {
-    		$this->fail('Only one reply possible');
-    	}
-    	$this->assertCount(1, $reply->favorites);
+        $this->signIn();
+
+        $reply = create('App\Reply');
+
+        $this->post('replies/' . $reply->id . '/favorites');
+
+        $this->assertCount(1, $reply->favorites);
     }
-    
+
+    /** @test */
+    function an_authenticated_user_may_only_favorite_a_reply_once()
+    {
+        $this->signIn();
+
+        $reply = create('App\Reply');
+
+        try {
+            $this->post('replies/' . $reply->id . '/favorites');
+            $this->post('replies/' . $reply->id . '/favorites');
+        } catch (\Exception $e) {
+            $this->fail('Did not expect to insert the same record set twice.');
+        }
+
+        $this->assertCount(1, $reply->favorites);
+    }
 }

@@ -9,8 +9,11 @@ trait RecordActivity
 		if(auth()->guest()) return;
 		
 		foreach (static::getRecordEvents() as $event) {
-			static::$event(function($model) use ($event) {
+			static::$event(function ($model) use ($event) {
 				$model->recordActivity($event);
+			});
+			static::deleting(function ($model) {
+				$model->activity()->delete();
 			});
 		}
 	}
@@ -26,11 +29,6 @@ trait RecordActivity
 			'user_id' => auth()->id(),
 			'type' => $this->getActivityType($event),
 		]);
-		// Activity::create([
-		// 	'subject_id' => $this->id,
-		// 	'subject_type' => get_class($this),
-		// ]);
-		
 	}
 
 	public function activity()
