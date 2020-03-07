@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div id="reply-{{ $reply->id }}" class="panel panel-default">
 	<div class="panel-heading">
 	    <div class="level">
 	    	<h5 class="flex">
@@ -6,7 +6,7 @@
 	    	</h5>
 	    	<div>
 	    		<form method="POST" action="/replies/{{ $reply->id }}/favorites">
-	    	{{ csrf_field() }}
+	    			{{ csrf_field() }}
 	    			<button type="submit" class="btn btn-primary" {{ $reply->isFavorited() ? 'disabled' : '' }}>
 	    				{{ $reply->favorites_count }} {{ 'Favorite', $reply->favorites_count }}</button>
 	    		</form>
@@ -16,4 +16,13 @@
 	<div class="panel-body">
 	    <p>{{ $reply->body }}</p>
 	</div>
+	@can ('update', $reply)
+		<div class="panel-footer">
+			<form method="POST" action="/replies/{{ $reply->id }}">
+				{{ csrf_field() }}
+				{{ method_field('DELETE') }}
+				<button type="submit" class="btn btn-danger btn-xs">Delete</button>
+			</form>
+		</div>
+	@endcan
 </div>

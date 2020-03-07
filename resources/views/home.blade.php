@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <flash message="This is message"></flash>
                 </div>
             </div>
         </div>
