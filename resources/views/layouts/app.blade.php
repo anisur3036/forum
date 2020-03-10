@@ -16,6 +16,13 @@
         .level {display: flex; align-items: center;}
         .flex { flex: 1; }
     </style>
+    <script>
+        window.App = {!! json_encode([ 
+            'csrfToken' => csrf_token(),
+            'signedIn' => Auth::check(),
+            'user' => Auth::user(),
+        ]) !!}
+    </script>
 </head>
 <body>
     <div id="app">
