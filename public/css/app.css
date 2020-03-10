@@ -8333,3 +8333,11 @@ button.close {
   }
 }
 
+.mr-1 {
+  margin-right: 1em;
+}
+
+[v-clock] {
+  display: none;
+}
+

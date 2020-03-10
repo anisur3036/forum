@@ -7,3 +7,9 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.mr-1 {
+	margin-right: 1em;
+}
+[v-clock] {
+	display: none;
+}
