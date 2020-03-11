@@ -21,20 +21,7 @@
                     	<p>{{ $thread->body }}</p>
                     </div>
                 </div>
-                <replies :data="{{ $thread->replies }}" @removed="repliesCount--"></replies>
-                {{-- {{ $replies->links() }} --}}
-
-                @if (Auth()->check())
-                    <form action="{{ $thread->path() }}/replies" method="POST" role="form">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <textarea name="body" id="body" class="form-control" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Reply</button>
-                    </form>
-                @else
-                 <p class="text-center">Please <a href="/login">sign in</a> to reply</p>
-                @endif
+                <replies :data="{{ $thread->replies }}" @removed="repliesCount--" @added="repliesCount++"></replies>
             </div>
 
             <div class="col-md-4">
