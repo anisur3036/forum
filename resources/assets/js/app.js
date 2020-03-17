@@ -7,7 +7,7 @@
 
 window.Vue = require('vue');
 require('./bootstrap');
-
+window.moment = require('moment');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,7 +16,7 @@ require('./bootstrap');
  */
 
 Vue.component('flash', require('./components/Flash.vue'));
-// Vue.component('Replies', require('./components/Replies.vue'));
+Vue.component('paginator', require('./components/Paginator.vue'));
 
 Vue.component('thread-view', require('./pages/Thread.vue'));
 
