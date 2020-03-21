@@ -119,4 +119,5 @@ class ThreadsController extends Controller
 
         return $threads->get();
     }
+
 }
