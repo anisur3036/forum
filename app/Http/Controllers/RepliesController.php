@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Spam;
 use App\Reply;
 use App\Thread;
 
@@ -27,9 +28,15 @@ class RepliesController extends Controller
      * @param  Thread  $thread
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store($channelId, Thread $thread)
+    public function store($channelId, Thread $thread, Spam $spam)
     {
         $this->validate(request(), ['body' => 'required']);
+
+//        $spam->delect(request('body'));
+
+//        if(stripos(request('body'), 'yahoo customer') !== false) {
+//            throw new \Exception('Your body contains spam');
+//        }
 
         $reply = $thread->addReply([
             'body' => request('body'),

@@ -110,6 +110,13 @@ class Thread extends Model
         return $filters->apply($query);
     }
 
+    public function hasUpdatesFor($user)
+    {
+        $key = $user->visitedThreadCacheKey($this);
+        return $this->updated_at > cache($key);
+    }
+    
+
     public function subscribe($userId = null)
     {
         $this->subscriptions()->create([

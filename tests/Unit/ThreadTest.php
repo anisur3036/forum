@@ -2,8 +2,9 @@
 
 namespace Tests\Unit;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Carbon\Carbon;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ThreadTest extends TestCase
 {
@@ -77,10 +78,13 @@ class ThreadTest extends TestCase
     /** @test */
     function a_thread_can_be_unsubscribed_from()
     {
-        $thread = factory('App\Thread')->create();
-        $thread->unsubscribe($userId = 1);
+        $thread = create('App\Thread');
 
-        $this->assertEquals(0, $thread->subscriptions);
+        $thread->subscribe($userId = 1);
+
+        $thread->unsubscribe($userId);
+
+        $this->assertCount(0, $thread->subscriptions);
 
     }
 
@@ -93,6 +97,21 @@ class ThreadTest extends TestCase
 
         $thread->subscribe();
         $this->assertTrue($thread->isSubscribeTo);
+    }
+
+    function a_thread_can_check_if_the_authenticated_user_has_read_all_replies()
+    {
+        $this->signIn();
+
+        $thread = create('App\Thread');
+
+        tap(auth()->user(), function ($user) use ($thread) {
+            $this->assertTrue($thread->hasUpdatesFor($user));
+
+            $user->read($thread);
+
+            $this->assertFalse($thread->hasUpdatesFor($user));
+        });
     }
 
 

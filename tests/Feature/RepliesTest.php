@@ -18,4 +18,20 @@ class RepliesTest extends TestCase
         $reply = create(Reply::class);
         $this->assertInstanceOf(User::class, $reply->owner);
     }
+
+    /** @test */
+//    function a_reply_may_be_contain_spam()
+//    {
+//        $this->signIn();
+//
+//        $thread = create('App\Thread');
+//        $reply = make('App\Reply', [
+//            'body' => 'Yahoo Customer'
+//        ]);
+//
+//        $this->expectException(\Exception::class);
+//
+//        $this->post($thread->path() . '/replies', $reply->toArray());
+//
+//    }
 }

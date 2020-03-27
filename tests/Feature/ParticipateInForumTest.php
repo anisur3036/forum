@@ -13,23 +13,6 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ParticipateInForumTest extends TestCase
 {
 	use DatabaseMigrations;
-	/** @test */
-	function an_authenticated_user_may_participate_in_forum_threads()
-	{
-       $this->signIn();
-	   //And an exisiting thread
-	   $thread = create(Thread::class);
-
-	   //When the users adds a reply to the thread
-	   $reply = create(Reply::class);
-
-	   //When the users adds a reply to the thread
-	   $this->post($thread->path() . '/replies', $reply->toArray());
-
-	   //then should see this reply on that page 
-	   $this->get($thread->path())
-	   	->assertSee($reply->body);
-	}
 
 	/** @test */
 	function a_reply_requires_a_body()
