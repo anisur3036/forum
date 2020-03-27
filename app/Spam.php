@@ -3,21 +3,21 @@
 namespace App;
 class Spam
 {
-    public function detect()
+    public function detect($body)
     {
-        $this->detectSpam();
+        $this->detectInvalidKeywords($body);
 
         return false;
     }
 
-    public function detectSpam()
+    public function detectInvalidKeywords($body)
     {
         $invalidKeys = [
-            'Yahoo Customer',
+            'Yahoo Customer Support',
         ];
 
         foreach ($invalidKeys as $keyword) {
-            if(stripos(request('body'), 'yahoo customer') !== false) {
+            if(stripos($body, $keyword) !== false) {
                 throw new \Exception('Your body contains spam');
             }
 

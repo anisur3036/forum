@@ -32,11 +32,7 @@ class RepliesController extends Controller
     {
         $this->validate(request(), ['body' => 'required']);
 
-//        $spam->delect(request('body'));
-
-//        if(stripos(request('body'), 'yahoo customer') !== false) {
-//            throw new \Exception('Your body contains spam');
-//        }
+        $spam->detect(request('body'));
 
         $reply = $thread->addReply([
             'body' => request('body'),
