@@ -28,22 +28,23 @@ class RepliesController extends Controller
      * @param  Thread  $thread
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store($channelId, Thread $thread, Spam $spam)
+    public function store($channelId, Thread $thread)
     {
-        $this->validate(request(), ['body' => 'required']);
+        try {
+            $this->validateReply();
 
-        $spam->detect(request('body'));
-
-        $reply = $thread->addReply([
-            'body' => request('body'),
-            'user_id' => auth()->id()
-        ]);
-
-        if (request()->expectsJson()) {
-            return $reply->load('owner');
+            $reply = $thread->addReply([
+                'body' => request('body'),
+                'user_id' => auth()->id()
+            ]);  
+        } catch (\Exception $e) {
+            return response('Sorry, your reply not save at this moment.', 422);
         }
+            
 
-        return back()->with('flash', 'Your reply has been added.');
+        return $reply->load('owner');
+
+        //return back()->with('flash', 'Your reply has been added.');
     }
 
     public function destroy(Reply $reply)
@@ -60,9 +61,21 @@ class RepliesController extends Controller
     public function update(Reply $reply)
     {
         $this->authorize('update', $reply);
-        $reply->update(request(['body']));
 
-        // return back(); 
+        try {
+            $this->validateReply();
+
+            $reply->update(request(['body']));  
+        } catch (\Exception $e) {
+            return response('Sorry, your reply not save at this moment.', 422);
+        }
     }
+
+    protected function validateReply()
+    {
+        $this->validate(request(), ['body' => 'required']);
+        resolve(Spam::class)->detect(request('body'));
+    }
+    
     
 }
