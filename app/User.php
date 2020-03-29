@@ -3,8 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -48,15 +48,19 @@ class User extends Authenticatable
         return $this->hasMany(Thread::class)->latest();
     }
 
+    /**
+     * Fetch the last published reply for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function lastReply()
     {
         return $this->hasOne(Reply::class)->latest();
     }
-    
 
     /**
      * Get all activity for the user.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function activity()
@@ -64,6 +68,11 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
+    /**
+     * Record that the user has read the given thread.
+     *
+     * @param Thread $thread
+     */
     public function read($thread)
     {
         cache()->forever(

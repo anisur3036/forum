@@ -2,9 +2,10 @@
 
 namespace Tests\Unit;
 
-use Carbon\Carbon;
-use Tests\TestCase;
+use App\Notifications\ThreadWasUpdated;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Notification;
+use Tests\TestCase;
 
 class ThreadTest extends TestCase
 {
@@ -55,6 +56,22 @@ class ThreadTest extends TestCase
     }
 
     /** @test */
+    function a_thread_notifies_all_registered_subscribers_when_a_reply_is_added()
+    {
+        Notification::fake();
+
+        $this->signIn()
+            ->thread
+            ->subscribe()
+            ->addReply([
+                'body' => 'Foobar',
+                'user_id' => 999
+            ]);
+
+        Notification::assertSentTo(auth()->user(), ThreadWasUpdated::class);
+    }
+
+    /** @test */
     function a_thread_belongs_to_a_channel()
     {
         $thread = create('App\Thread');
@@ -63,9 +80,9 @@ class ThreadTest extends TestCase
     }
 
     /** @test */
-    function a_thread_can_be_subscribe_to()
+    function a_thread_can_be_subscribed_to()
     {
-        $thread = factory('App\Thread')->create();
+        $thread = create('App\Thread');
 
         $thread->subscribe($userId = 1);
 
@@ -85,20 +102,23 @@ class ThreadTest extends TestCase
         $thread->unsubscribe($userId);
 
         $this->assertCount(0, $thread->subscriptions);
-
     }
 
     /** @test */
-    function a_thread_knows_about_a_user_subscription()
+    function it_knows_if_the_authenticated_user_is_subscribed_to_it()
     {
-        $this->signIn();
         $thread = create('App\Thread');
-        $this->assertFalse($thread->isSubscribeTo);
+
+        $this->signIn();
+
+        $this->assertFalse($thread->isSubscribedTo);
 
         $thread->subscribe();
-        $this->assertTrue($thread->isSubscribeTo);
+
+        $this->assertTrue($thread->isSubscribedTo);
     }
 
+    /** @test */
     function a_thread_can_check_if_the_authenticated_user_has_read_all_replies()
     {
         $this->signIn();
@@ -113,6 +133,4 @@ class ThreadTest extends TestCase
             $this->assertFalse($thread->hasUpdatesFor($user));
         });
     }
-
-
 }

@@ -1,55 +1,52 @@
 <template>
-	<div class="level">
-		<button type="submit" class="fab-btn" @click="toggle">
-			<span :class="classes"></span>
-		</button>
-		<span v-text="favoritesCount"></span>
-	</div>
+    <button type="submit" :class="classes" @click="toggle">
+        <span class="glyphicon glyphicon-heart"></span>
+        <span v-text="count"></span>
+    </button>
 </template>
 
 <script>
-export default {
-	props: ['reply'],
-  data() {
-  	return {
-      favoritesCount: this.reply.favoritesCount,
-      isFavorited: this.reply.isFavorited,
-  	}
-  },
-  computed: {
-  	classes() {
-  		return ['glyphicon', this.isFavorited ? 'glyphicon-heart' : 'glyphicon-heart-empty']
-  	},
-  	endpoint() {
-  		return '/replies/' + this.reply.id + '/favorites'
-  	}
-  },
-  methods: {
-  	toggle() {
-  			this.isFavorited ? this.destroy() : this.create();
-  	},
-  	create() {
-  		axios.post(this.endpoint);
-			this.isFavorited = true;
-			this.favoritesCount++;  		
-  	},
-  	destroy() {
-  		axios.delete(this.endpoint);
-			this.isFavorited = false;
-			this.favoritesCount--;
-  	}
-  }
-}
-</script>	
+    export default {
+        props: ['reply'],
 
-<style lang="scss">
-	.fab-btn {
-		border: 0;
-		border-radius: 50%;
-		background: transparent;
-		outline: none;
-	}
-	.glyphicon-heart {
-		color: orange;
-	}
-</style>
+        data() {
+            return {
+                count: this.reply.favoritesCount,
+                active: this.reply.isFavorited
+            }
+        },
+
+        computed: {
+            classes() {
+                return [
+                    'btn',
+                    this.active ? 'btn-primary' : 'btn-default'
+                ];
+            },
+
+            endpoint() {
+                return '/replies/' + this.reply.id + '/favorites';
+            }
+        },
+
+        methods: {
+            toggle() {
+                this.active ? this.destroy() : this.create();
+            },
+
+            create() {
+                axios.post(this.endpoint);
+
+                this.active = true;
+                this.count++;
+            },
+
+            destroy() {
+                axios.delete(this.endpoint);
+
+                this.active = false;
+                this.count--;
+            }
+        }
+    }
+</script>

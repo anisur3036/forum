@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use Carbon\Carbon;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ReplyTest extends TestCase
 {
@@ -19,15 +19,14 @@ class ReplyTest extends TestCase
     }
 
     /** @test */
-    public function it_knows_if_it_was_just_published()
+    function it_knows_if_it_was_just_published()
     {
-    	$reply = create('App\Reply');
+        $reply = create('App\Reply');
 
-    	$this->assertTrue($reply->wasJustPublished());
+        $this->assertTrue($reply->wasJustPublished());
 
-    	$reply->created_at = Carbon::now()->subMonth();
+        $reply->created_at = Carbon::now()->subMonth();
 
-    	$this->assertFalse($reply->wasJustPublished());
-
+        $this->assertFalse($reply->wasJustPublished());
     }
 }

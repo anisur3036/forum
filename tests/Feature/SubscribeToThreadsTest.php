@@ -2,69 +2,38 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Notifications\DatabaseNotification;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class SubscribeToThreadsTest extends TestCase
 {
     use DatabaseMigrations;
-   /** @test */
-   function user_can_subscribe_to_threads()
-   {
-        $this->signIn();
-        $thread = create('App\Thread');
-
-        $this->post($thread->path() . '/subscriptions');
-
-       $this->assertCount(1, $thread->subscriptions);
-
-
-   }
-
 
     /** @test */
-   public function only_throw_notification_if_other_user_give_reply()
-   {
-       $this->signIn();
-       $thread = create('App\Thread');
-       $this->post($thread->path() . '/subscriptions');
-       $this->assertCount(0, auth()->user()->notifications);
-       $thread->addReply([
-           'user_id' => auth()->id(),
-           'body' => 'Something'
-       ]);
+    public function a_user_can_subscribe_to_threads()
+    {
+        $this->signIn();
 
-       $this->assertCount(0, auth()->user()->fresh()->notifications);
-       $thread->addReply([
-           'user_id' => create('App\User')->id,
-           'body' => 'Something'
-       ]);
-       $this->assertCount(1, auth()->user()->fresh()->notifications);
-   }
+        // Given we have a thread...
+        $thread = create('App\Thread');
 
-   /** @test */
-   function a_user_can_see_there_notifications()
-   {
-       $this->signIn();
-       create(DatabaseNotification::class);
-       $this->assertCount(1, $this->getJson('/profiles/' . auth()->user()->name . '/notifications')->json());
-   }
-   
-   /** @test */
-   function a_user_can_clear_notifications()
-   {
-       $this->signIn();
+        // And the user subscribes to the thread...
+        $this->post($thread->path() . '/subscriptions');
 
-       create(DatabaseNotification::class);
+        $this->assertCount(1, $thread->fresh()->subscriptions);
+    }
 
-       $this->assertCount(1, auth()->user()->unreadNotifications);
+    /** @test */
+    public function a_user_can_unsubscribe_from_threads()
+    {
+        $this->signIn();
 
-       $notificationId = auth()->user()->unreadNotifications->first()->id;
-       $this->delete('/profiles/'. auth()->user()->name . '/notifications/' . $notificationId);
+        $thread = create('App\Thread');
 
-       $this->assertCount(0, auth()->user()->fresh()->unreadNotifications);
-   }
+        $thread->subscribe();
+
+        $this->delete($thread->path() . '/subscriptions');
+
+        $this->assertCount(0, $thread->subscriptions);
+    }
 }

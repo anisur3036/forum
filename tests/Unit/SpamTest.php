@@ -1,32 +1,32 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Inspections\Spam;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class SpamTest extends TestCase
 {
-   /** @test */
-   public function it_check_for_invalide_keyword()
-   {
-   		$spam = new Spam();
-   		$this->assertFalse($spam->detect('Some important reply'));
+    /** @test */
+    public function it_checks_for_invalid_keywords()
+    {
+        $spam = new Spam();
 
-   		$this->expectException('Exception');
+        $this->assertFalse($spam->detect('Innocent reply here'));
 
-   		$spam->detect('Yahoo customer support');
-   }
+        $this->expectException('Exception');
 
-   /** @test */
-   public function it_checks_for_any_key_being_held_down()
-   {
-   		$spam = new Spam();
+        $spam->detect('yahoo customer support');
+    }
 
-   		$this->expectException('Exception');
+    /** @test */
+    function it_checks_for_any_key_being_held_down()
+    {
+        $spam = new Spam();
 
-   		$spam->detect('Hello Worldddddddddddd');
-   }
+        $this->expectException('Exception');
+
+        $spam->detect('Hello world aaaaaaaaa');
+
+    }
 }
