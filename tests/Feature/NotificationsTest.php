@@ -62,5 +62,5 @@ class NotificationsTest extends TestCase
 
             $this->assertCount(0, $user->fresh()->unreadNotifications);
         });
-    }
+    } 
 }
