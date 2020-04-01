@@ -39,4 +39,17 @@ class ReplyTest extends TestCase
 
         $this->assertEquals(['JoneDoe', 'JaneDoe'], $reply->mentionedUsers());
     }
+
+    /** @test */
+    public function it_wraps_mentioned_usernames_in_tag()
+    {
+        $reply = create('App\Reply', [
+            'body' => 'Hello @Anis'
+        ]);
+
+        $this->assertEquals(
+            'Hello <a href="/profiles/Anis">@Anis</a>',
+            $reply->body
+        );
+    }
 }

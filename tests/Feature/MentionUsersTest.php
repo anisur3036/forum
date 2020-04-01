@@ -23,7 +23,7 @@ class MentionUsersTest extends TestCase
     	$thread = create('App\Thread');
 
     	$reply = make('App\Reply', [
-    		'body' => '@Tabu you see my @Anis reply.'
+    		'body' => '@Tabu you see my @Anisrah reply.'
     	]);
 
     	$this->json('post', $thread->path() . '/replies', $reply->toArray());
